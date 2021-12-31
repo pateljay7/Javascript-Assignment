@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scientific_calculator.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <table class="main" align="center">
+        <tr>
+            <td class="display" colspan="1"> <input class="display-content" id="dis"></input>
+        </tr>
+        <tr class="unkonwn">
+            <!-- <button class="deg">DEG</button>
+        <button class="EF" colspan="4">E-F</button> -->
+            <td class="row-2">
+                <button class="deg bold-font">DEG</button>
+                <button class="deg bold-font">E-F</button>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 100%;" class="M-display">
+                <button class="M-btn">MC</button>
+                <button class="M-btn">MR</button>
+                <button class="M-btn bold-font">M+</button>
+                <button class="M-btn bold-font">M-</button>
+                <button class="M-btn bold-font">MS</button>
+            </td>
+        </tr>
+        <tr class="math-function">
+            <td>
+                <div class="dropdown trigo">
+                    <button class="dropbtn"><font>𝚫</font> Trignometry▼</button>
+                    <div class="dropdown-content">
+                        <button value="Math.sin(" onclick="my(this.value)">Sin()</button>
+                        <button value="Math.cos(" onclick="my(this.value)">Cos()</button>
+                        <button value="Math.tan(" onclick="my(this.value)">Tan()</button>
+                    </div>
+                </div>
+                <div class="dropdown trigo">
+                    <button class="dropbtn"><font>⨏</font> Function▼</button>
+                    <div class="dropdown-content">
+                        <button value="Math.sin(" onclick="my(this.value)">Sin()</button>
+                        <button value="Math.cos(" onclick="my(this.value)">Cos()</button>
+                        <button value="Math.tan(" onclick="my(this.value)">Tan()</button>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+        <tr class="buttons">
+            <td class="btn-row-1">
+                <button class="normal-btn">2nd</button>
+                <button class="normal-btn" value="Math.PI" onclick="my(this.value)">∏</button>
+                <button class="normal-btn" value="2.7182818284" onclick="my(this.value)">e</button>
+                <button class="normal-btn" onclick="clear_display()">C</button>
+                <button class="normal-btn" onclick="clear_last_digit()">⌫</button>
+            </td>
+        </tr>
+        <tr class="buttons">
+            <td class="btn-row-1">
+                <button class="normal-btn" value="Math.pow(2,2)" onclick="my(this.value)">x²</button>
+                <button class="normal-btn" value="1/" onclick="my(this.value)">1/x</button>
+                <button class="normal-btn" value="|" onclick="my(this.value)">|x|</button>
+                <button class="normal-btn">exp</button>
+                <button class="normal-btn" value="%" onclick="my(this.value)">mod</button>
+            </td>
+        </tr>
+        <tr class="buttons">
+            <td class="btn-row-1">
+                <button class="normal-btn" value="Math.sqrt(" onclick="my(this.value)">2√   x</button>
+                <button class="normal-btn" value="(" onclick="my(this.value)">(</button>
+                <button class="normal-btn" value=")" onclick="my(this.value)">)</button>
+                <button class="normal-btn">n!</button>
+                <button class="normal-btn" value="/" onclick="my(this.value)">/</button>
+            </td>
+            <td class="btn-row-1">
+                <button class="normal-btn" value="Math.pow(" onclick="my(this.value)">x2y</button>
+                <button class="normal-btn bold-font" value="7" onclick="my(this.value)">7</button>
+                <button class="normal-btn bold-font" value="8" onclick="my(this.value)">8</button>
+                <button class="normal-btn bold-font" value="9" onclick="my(this.value)">9</button>
+                <button class="normal-btn" value="*" onclick="my(this.value)">*</button>
+            </td>
+            <td class="btn-row-1">
+                <button class="normal-btn" value="Math.pow(10," onclick="my(this.value)">10x</button>
+                <button class="normal-btn bold-font" value="4" onclick="my(this.value)">4</button>
+                <button class="normal-btn bold-font" value="5" onclick="my(this.value)">5</button>
+                <button class="normal-btn bold-font" value="6" onclick="my(this.value)">6</button>
+                <button class="normal-btn" value="-" onclick="my(this.value)">-</button>
+            </td>
+            <td class="btn-row-1">
+                <button class="normal-btn" value="Math.log(" onclick="my(this.value)">log</button>
+                <button class="normal-btn bold-font" value="1" onclick="my(this.value)">1</button>
+                <button class="normal-btn bold-font" value="2" onclick="my(this.value)">2</button>
+                <button class="normal-btn bold-font" value="3" onclick="my(this.value)">3</button>
+                <button class="normal-btn" value="+" onclick="my(this.value)">+</button>
+            </td>
+            <td class="btn-row-1">
+                <button class="normal-btn" value="Math.ln(" onclick="my(this.value)">ln</button>
+                <button class="normal-btn" value="," onclick="my(this.value)">,</button>
+                <button class="normal-btn bold-font" value="0" onclick="my(this.value)">0</button>
+                <button class="normal-btn">.</button>
+                <button class="normal-btn btn-equal" value="\=" onclick="result()">=</button>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
