@@ -5,112 +5,112 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Scientific Calculator</title>
     <link rel="stylesheet" href="style.css">
     <script src="scientific_calculator.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 </head>
 
 <body>
-
-    <table class="main" align="center">
+ 
+    <table align="center">
         <tr>
-            <td class="display" colspan="1"> <input class="display-content" id="dis"></input>
+            <td class="display" colspan="1">
+                <input type="text" id="dis" value="0" oninput="inputBetweenExp()"></input>
+            </td>
+
         </tr>
         <tr class="unkonwn">
-            <!-- <button class="deg">DEG</button>
-        <button class="EF" colspan="4">E-F</button> -->
-            <td class="row-2">
-                <button class="deg bold-font">DEG</button>
-                <button class="deg bold-font">E-F</button>
+            <td>
+                <button class="deg">DEG</button>
+                <button class="deg">E-F</button>
             </td>
         </tr>
         <tr>
             <td style="width: 100%;" class="M-display">
-                <button class="M-btn">MC</button>
-                <button class="M-btn">MR</button>
-                <button class="M-btn bold-font">M+</button>
-                <button class="M-btn bold-font">M-</button>
-                <button class="M-btn bold-font">MS</button>
+                <button>MC</button>
+                <button>MR</button>
+                <button>M+</button>
+                <button>M-</button>
+                <button>MS</button>
             </td>
         </tr>
         <tr class="math-function">
             <td>
-                <div class="dropdown trigo">
-                    <button class="dropbtn"><font>𝚫</font> Trignometry▼</button>
+                <div class="dropdown">
+                    <button>
+                        <font>𝚫</font> Trignometry ▼
+                    </button>
                     <div class="dropdown-content">
-                        <button value="Math.sin(" onclick="my(this.value)">Sin()</button>
-                        <button value="Math.cos(" onclick="my(this.value)">Cos()</button>
-                        <button value="Math.tan(" onclick="my(this.value)">Tan()</button>
+                        <button value="Math.sin(" onclick="updateExpresion(this.value)">Sin()</button>
+                        <button value="Math.cos(" onclick="updateExpresion(this.value)">Cos()</button>
+                        <button value="Math.tan(" onclick="updateExpresion(this.value)">Tan()</button>
                     </div>
                 </div>
-                <div class="dropdown trigo">
-                    <button class="dropbtn"><font>⨏</font> Function▼</button>
+                <div class="dropdown">
+                    <button>
+                        <font>⨏</font> Function ▼
+                    </button>
                     <div class="dropdown-content">
-                        <button value="Math.sin(" onclick="my(this.value)">Sin()</button>
-                        <button value="Math.cos(" onclick="my(this.value)">Cos()</button>
-                        <button value="Math.tan(" onclick="my(this.value)">Tan()</button>
+                        <button value="Math.sin(" onclick="updateExpresion(this.value)">Sin()</button>
+                        <button value="Math.cos(" onclick="updateExpresion(this.value)">Cos()</button>
+                        <button value="Math.tan(" onclick="updateExpresion(this.value)">Tan()</button>
                     </div>
                 </div>
 
             </td>
         </tr>
-        <tr class="buttons">
-            <td class="btn-row-1">
-                <button class="normal-btn">2nd</button>
-                <button class="normal-btn" value="Math.PI" onclick="my(this.value)">∏</button>
-                <button class="normal-btn" value="2.7182818284" onclick="my(this.value)">e</button>
-                <button class="normal-btn" onclick="clear_display()">C</button>
-                <button class="normal-btn" onclick="clear_last_digit()">⌫</button>
+        <tr class="operations">
+            <td>
+                <button>2nd</button>
+                <button value="Math.PI" onclick="updateExpresion(this.value)" >∏</button>
+                <button value="2.7182818284" onclick="updateExpresion(this.value)">e</button>
+                <button value="clear" onclick="updateExpresion(this.value)">C</button>
+                <button value="CL" onclick="updateExpresion(this.value)">⌫</button>
             </td>
-        </tr>
-        <tr class="buttons">
-            <td class="btn-row-1">
-                <button class="normal-btn" value="Math.pow(2,2)" onclick="my(this.value)">x²</button>
-                <button class="normal-btn" value="1/" onclick="my(this.value)">1/x</button>
-                <button class="normal-btn" value="|" onclick="my(this.value)">|x|</button>
-                <button class="normal-btn">exp</button>
-                <button class="normal-btn" value="%" onclick="my(this.value)">mod</button>
+
+            <td>
+                <button value="Math.pow(,2)" onclick="updateExpresion(this.value)">x²</button>
+                <button value="1/" onclick="updateExpresion(this.value)">1/x</button>
+                <button value="|" onclick="updateExpresion(this.value)">|x|</button>
+                <button value="Math.exp(" onclick="updateExpresion(this.value)">exp</button>
+                <button value="%" onclick="updateExpresion(this.value)">mod</button>
             </td>
-        </tr>
-        <tr class="buttons">
-            <td class="btn-row-1">
-                <button class="normal-btn" value="Math.sqrt(" onclick="my(this.value)">2√   x</button>
-                <button class="normal-btn" value="(" onclick="my(this.value)">(</button>
-                <button class="normal-btn" value=")" onclick="my(this.value)">)</button>
-                <button class="normal-btn">n!</button>
-                <button class="normal-btn" value="/" onclick="my(this.value)">/</button>
+
+            <td>
+                <button value="Math.sqrt(" onclick="updateExpresion(this.value)">2√ x</button>
+                <button value="(" onclick="updateExpresion(this.value)">(</button>
+                <button value=")" onclick="updateExpresion(this.value)">)</button>
+                <button value="!" onclick="updateExpresion(this.value)">n!</button>
+                <button value="/" onclick="updateExpresion(this.value)">/</button>
             </td>
-            <td class="btn-row-1">
-                <button class="normal-btn" value="Math.pow(" onclick="my(this.value)">x2y</button>
-                <button class="normal-btn bold-font" value="7" onclick="my(this.value)">7</button>
-                <button class="normal-btn bold-font" value="8" onclick="my(this.value)">8</button>
-                <button class="normal-btn bold-font" value="9" onclick="my(this.value)">9</button>
-                <button class="normal-btn" value="*" onclick="my(this.value)">*</button>
+            <td>
+                <button value="Math.pow(" onclick="updateExpresion(this.value)">x^y</button>
+                <button class=" bold-font" value="7" onclick="updateExpresion(this.value)">7</button>
+                <button class=" bold-font" value="8" onclick="updateExpresion(this.value)">8</button>
+                <button class=" bold-font" value="9" onclick="updateExpresion(this.value)">9</button>
+                <button value="*" onclick="updateExpresion(this.value)">*</button>
             </td>
-            <td class="btn-row-1">
-                <button class="normal-btn" value="Math.pow(10," onclick="my(this.value)">10x</button>
-                <button class="normal-btn bold-font" value="4" onclick="my(this.value)">4</button>
-                <button class="normal-btn bold-font" value="5" onclick="my(this.value)">5</button>
-                <button class="normal-btn bold-font" value="6" onclick="my(this.value)">6</button>
-                <button class="normal-btn" value="-" onclick="my(this.value)">-</button>
+            <td>
+                <button value="Math.pow(10," onclick="updateExpresion(this.value)">10^x</button>
+                <button class=" bold-font" value="4" onclick="updateExpresion(this.value)">4</button>
+                <button class=" bold-font" value="5" onclick="updateExpresion(this.value)">5</button>
+                <button class=" bold-font" value="6" onclick="updateExpresion(this.value)">6</button>
+                <button value="-" onclick="updateExpresion(this.value)">-</button>
             </td>
-            <td class="btn-row-1">
-                <button class="normal-btn" value="Math.log(" onclick="my(this.value)">log</button>
-                <button class="normal-btn bold-font" value="1" onclick="my(this.value)">1</button>
-                <button class="normal-btn bold-font" value="2" onclick="my(this.value)">2</button>
-                <button class="normal-btn bold-font" value="3" onclick="my(this.value)">3</button>
-                <button class="normal-btn" value="+" onclick="my(this.value)">+</button>
+            <td>
+                <button value="Math.log(" onclick="updateExpresion(this.value)">log</button>
+                <button class=" bold-font" value="1" onclick="updateExpresion(this.value)">1</button>
+                <button class=" bold-font" value="2" onclick="updateExpresion(this.value)">2</button>
+                <button class=" bold-font" value="3" onclick="updateExpresion(this.value)">3</button>
+                <button value="+" onclick="updateExpresion(this.value)">+</button>
             </td>
-            <td class="btn-row-1">
-                <button class="normal-btn" value="Math.ln(" onclick="my(this.value)">ln</button>
-                <button class="normal-btn" value="," onclick="my(this.value)">,</button>
-                <button class="normal-btn bold-font" value="0" onclick="my(this.value)">0</button>
-                <button class="normal-btn">.</button>
-                <button class="normal-btn btn-equal" value="\=" onclick="result()">=</button>
+            <td>
+                <button value="Math.ln(" onclick="updateExpresion(this.value)">ln</button>
+                <button value="," onclick="updateExpresion(this.value)">,</button>
+                <button class=" bold-font" value="0" onclick="updateExpresion(this.value)">0</button>
+                <button>.</button>
+                <button class=" btn-equal" value="=" onclick="updateExpresion(this.value)">=</button>
             </td>
         </tr>
 
